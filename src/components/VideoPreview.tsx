@@ -96,7 +96,7 @@ export default function VideoPreview() {
 
       const next = currentTime + delta;
       if (next >= totalDuration) {
-        setCurrentTime(0);
+        setCurrentTime(totalDuration);
         setIsPlaying(false);
         return;
       }
