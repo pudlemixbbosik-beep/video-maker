@@ -85,6 +85,8 @@ export default function VideoPreview() {
       return;
     }
 
+    // Use a local variable to accumulate time, avoiding stale closure on currentTime.
+    let localTime = currentTime;
     let lastTimestamp: number | null = null;
 
     const tick = (timestamp: number) => {
@@ -94,13 +96,13 @@ export default function VideoPreview() {
       const delta = (timestamp - lastTimestamp) / 1000;
       lastTimestamp = timestamp;
 
-      const next = currentTime + delta;
-      if (next >= totalDuration) {
+      localTime += delta;
+      if (localTime >= totalDuration) {
         setCurrentTime(totalDuration);
         setIsPlaying(false);
         return;
       }
-      setCurrentTime(next);
+      setCurrentTime(localTime);
       animFrameRef.current = requestAnimationFrame(tick);
     };
 
