@@ -37,8 +37,13 @@ export default function VideoPreview() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const animFrameRef = useRef<number>(0);
   const lastClipIdRef = useRef<string | null>(null);
+  const currentTimeRef = useRef(currentTime);
   const [volume, setVolume] = useState(1);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    currentTimeRef.current = currentTime;
+  }, [currentTime]);
 
   const totalDuration = project.totalDuration;
   const { clips } = project;
@@ -94,7 +99,7 @@ export default function VideoPreview() {
       const delta = (timestamp - lastTimestamp) / 1000;
       lastTimestamp = timestamp;
 
-      const next = currentTime + delta;
+      const next = currentTimeRef.current + delta;
       if (next >= totalDuration) {
         setCurrentTime(totalDuration);
         setIsPlaying(false);
