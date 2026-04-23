@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Sidebar from '@/components/Sidebar';
 import Header from '@/components/Header';
 import Dashboard from '@/components/Dashboard';
+import AgentPanel from '@/components/AgentPanel';
 import { AGENT_CONFIGS } from '@/lib/projectInfo';
 import { AgentKey } from '@/types';
 
@@ -29,19 +30,9 @@ export default function Page() {
         <main className="flex-1 overflow-hidden">
           {activeView === 'dashboard' ? (
             <Dashboard onSelectAgent={(k) => setActiveView(k as AgentKey)} />
-          ) : (
-            /* 에이전트 패널 자리 (2단계에서 구현) */
-            <div className="flex flex-col items-center justify-center h-full gap-3 text-slate-500">
-              <span className="text-5xl">{currentAgent?.icon}</span>
-              <p className="text-sm">{currentAgent?.title} 에이전트 — 2단계에서 구현 예정</p>
-              <button
-                onClick={() => setActiveView('dashboard')}
-                className="text-xs text-amber-500 hover:text-amber-400 underline"
-              >
-                ← 대시보드로 돌아가기
-              </button>
-            </div>
-          )}
+          ) : currentAgent ? (
+            <AgentPanel config={currentAgent} />
+          ) : null}
         </main>
       </div>
     </div>
