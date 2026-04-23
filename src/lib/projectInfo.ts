@@ -1,0 +1,109 @@
+import { AgentConfig } from '@/types';
+
+export const PROJECT = {
+  name: '상주시 시니어복합센터 건립사업',
+  location: '경북 상주시 무양동 11-1번지 외 4필지',
+  client: '상주시청',
+  siteArea: '1,784.80㎡',
+  floorArea: '연면적 2,200㎡',
+  floors: '지하1층+지상4층',
+  budget: '98.5억원',
+  deadline: '2026년 6월 2일',
+  judgeDate: '2026년 6월 11일',
+  purpose: '시니어 복합 커뮤니티 시설',
+  region: '경상북도 상주시',
+  submitDate: '2026-06-02',
+  judgeDate2: '2026-06-11',
+  certZeroEnergy: '제로에너지건축물 4등급',
+  certBF: 'BF(장애물없는생활환경) 예비인증',
+  renewableEnergy: '신재생에너지 36% 이상',
+} as const;
+
+export const JUDGE_CRITERIA = [
+  { label: '배치·동선 계획', score: 25 },
+  { label: '공간·기능 계획', score: 25 },
+  { label: '경관·외관 계획', score: 25 },
+  { label: '구조·기술·법규', score: 25 },
+] as const;
+
+export const SCHEDULE = [
+  { date: '2026.04.22', label: '참가 등록', isoDate: '2026-04-22' },
+  { date: '2026.06.02', label: '작품 제출', isoDate: '2026-06-02' },
+  { date: '2026.06.11', label: '심사', isoDate: '2026-06-11' },
+  { date: '2026.06.15', label: '결과 발표', isoDate: '2026-06-15' },
+] as const;
+
+export const AGENT_CONFIGS: AgentConfig[] = [
+  {
+    key: 'guidelines',
+    title: '지침분석',
+    subtitle: '체크리스트 49항목',
+    icon: '📋',
+    colorClass: 'text-blue-400',
+    borderClass: 'border-blue-500/40',
+    bgClass: 'bg-blue-500/10',
+  },
+  {
+    key: 'siteAnalysis',
+    title: '대지분석',
+    subtitle: 'SWOT·주변환경 분석',
+    icon: '🗺️',
+    colorClass: 'text-emerald-400',
+    borderClass: 'border-emerald-500/40',
+    bgClass: 'bg-emerald-500/10',
+  },
+  {
+    key: 'report',
+    title: '보고서 생성',
+    subtitle: '8섹션 종합보고서',
+    icon: '📊',
+    colorClass: 'text-purple-400',
+    borderClass: 'border-purple-500/40',
+    bgClass: 'bg-purple-500/10',
+  },
+  {
+    key: 'concept',
+    title: '컨셉 제안',
+    subtitle: '3가지 컨셉 + 심사 점수 예측',
+    icon: '💡',
+    colorClass: 'text-yellow-400',
+    borderClass: 'border-yellow-500/40',
+    bgClass: 'bg-yellow-500/10',
+  },
+  {
+    key: 'description',
+    title: '설계설명서',
+    subtitle: '지침서 3.5절 기준 15매',
+    icon: '📝',
+    colorClass: 'text-orange-400',
+    borderClass: 'border-orange-500/40',
+    bgClass: 'bg-orange-500/10',
+  },
+  {
+    key: 'layoutPlan',
+    title: '배치·평면계획',
+    subtitle: '3가지 배치대안 + 층별 조닝',
+    icon: '📐',
+    colorClass: 'text-cyan-400',
+    borderClass: 'border-cyan-500/40',
+    bgClass: 'bg-cyan-500/10',
+  },
+  {
+    key: 'exterior',
+    title: '외관디자인',
+    subtitle: '3가지 입면 + 재료·색채계획',
+    icon: '🏛️',
+    colorClass: 'text-rose-400',
+    borderClass: 'border-rose-500/40',
+    bgClass: 'bg-rose-500/10',
+  },
+  {
+    key: 'massDesign',
+    title: '매스디자인',
+    subtitle: '4가지 매스 비례·리듬 분석',
+    icon: '🧊',
+    colorClass: 'text-indigo-400',
+    borderClass: 'border-indigo-500/40',
+    bgClass: 'bg-indigo-500/10',
+  },
+];
