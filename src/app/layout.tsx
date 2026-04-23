@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'VideoMaker - 영상 편집기',
-  description: '브라우저에서 바로 사용하는 영상 제작 앱',
+  title: '설계공모 AI - 상주시 시니어복합센터',
+  description: '상주시 시니어복합센터 건립사업 설계공모 AI 시스템',
 };
 
 export default function RootLayout({
