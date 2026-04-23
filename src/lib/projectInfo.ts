@@ -3,15 +3,36 @@ import { AgentConfig } from '@/types';
 export const PROJECT = {
   name: '상주시 시니어복합센터 건립사업',
   location: '경북 상주시 무양동 11-1번지 외 4필지',
-  client: '상주시',
+  client: '상주시청',
+  siteArea: '1,784.80㎡',
   floorArea: '연면적 2,200㎡',
   floors: '지하1층+지상4층',
-  budget: '98억원',
+  budget: '98.5억원',
   deadline: '2026년 6월 2일',
+  judgeDate: '2026년 6월 11일',
   purpose: '시니어 복합 커뮤니티 시설',
   region: '경상북도 상주시',
   submitDate: '2026-06-02',
+  judgeDate2: '2026-06-11',
+  certZeroEnergy: '제로에너지건축물 4등급',
+  certBF: 'BF(장애물없는생활환경) 예비인증',
+  renewableEnergy: '신재생에너지 36% 이상',
 } as const;
+
+export const JUDGE_CRITERIA = [
+  { label: '배치·동선 계획', score: 25 },
+  { label: '공간·기능 계획', score: 25 },
+  { label: '경관·외관 계획', score: 25 },
+  { label: '구조·기술·법규', score: 25 },
+] as const;
+
+export const SCHEDULE = [
+  { date: '2026.05.01', label: '공고', done: true },
+  { date: '2026.05.15', label: '현장설명회', done: true },
+  { date: '2026.06.02', label: '작품 제출', done: false },
+  { date: '2026.06.11', label: '심사', done: false },
+  { date: '2026.06.20', label: '결과 발표', done: false },
+] as const;
 
 export const AGENT_CONFIGS: AgentConfig[] = [
   {
@@ -35,7 +56,7 @@ export const AGENT_CONFIGS: AgentConfig[] = [
   {
     key: 'report',
     title: '보고서 생성',
-    subtitle: '8섹션 자동 생성',
+    subtitle: '8섹션 종합보고서',
     icon: '📊',
     colorClass: 'text-purple-400',
     borderClass: 'border-purple-500/40',
@@ -44,7 +65,7 @@ export const AGENT_CONFIGS: AgentConfig[] = [
   {
     key: 'concept',
     title: '컨셉 제안',
-    subtitle: '설계 컨셉 + 점수 예측',
+    subtitle: '3가지 컨셉 + 심사 점수 예측',
     icon: '💡',
     colorClass: 'text-yellow-400',
     borderClass: 'border-yellow-500/40',
@@ -53,7 +74,7 @@ export const AGENT_CONFIGS: AgentConfig[] = [
   {
     key: 'description',
     title: '설계설명서',
-    subtitle: '10섹션 자동 작성',
+    subtitle: '지침서 3.5절 기준 15매',
     icon: '📝',
     colorClass: 'text-orange-400',
     borderClass: 'border-orange-500/40',
@@ -62,7 +83,7 @@ export const AGENT_CONFIGS: AgentConfig[] = [
   {
     key: 'layoutPlan',
     title: '배치·평면계획',
-    subtitle: '3가지 배치대안',
+    subtitle: '3가지 배치대안 + 층별 조닝',
     icon: '📐',
     colorClass: 'text-cyan-400',
     borderClass: 'border-cyan-500/40',
@@ -71,7 +92,7 @@ export const AGENT_CONFIGS: AgentConfig[] = [
   {
     key: 'exterior',
     title: '외관디자인',
-    subtitle: 'SVG 입면도 + 재료',
+    subtitle: '3가지 입면 + 재료·색채계획',
     icon: '🏛️',
     colorClass: 'text-rose-400',
     borderClass: 'border-rose-500/40',
@@ -80,7 +101,7 @@ export const AGENT_CONFIGS: AgentConfig[] = [
   {
     key: 'massDesign',
     title: '매스디자인',
-    subtitle: '아이소메트릭 3D',
+    subtitle: '4가지 매스 비례·리듬 분석',
     icon: '🧊',
     colorClass: 'text-indigo-400',
     borderClass: 'border-indigo-500/40',
