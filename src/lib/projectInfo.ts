@@ -27,11 +27,10 @@ export const JUDGE_CRITERIA = [
 ] as const;
 
 export const SCHEDULE = [
-  { date: '2026.05.01', label: '공고', done: true },
-  { date: '2026.05.15', label: '현장설명회', done: true },
-  { date: '2026.06.02', label: '작품 제출', done: false },
-  { date: '2026.06.11', label: '심사', done: false },
-  { date: '2026.06.20', label: '결과 발표', done: false },
+  { date: '2026.04.22', label: '참가 등록', isoDate: '2026-04-22' },
+  { date: '2026.06.02', label: '작품 제출', isoDate: '2026-06-02' },
+  { date: '2026.06.11', label: '심사', isoDate: '2026-06-11' },
+  { date: '2026.06.15', label: '결과 발표', isoDate: '2026-06-15' },
 ] as const;
 
 export const AGENT_CONFIGS: AgentConfig[] = [
